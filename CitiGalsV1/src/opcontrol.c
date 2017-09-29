@@ -46,10 +46,11 @@ void operatorControl() {
 			 arm = joystickGetAnalog(2, 1); //horizontal axis on left joystick
 
 			 joystickR = joystickGetAnalog (1, 1);
-			 motorR = pow(joystickR, 3)+(0.3*joystickR);
-			 motorL = pow(joystickR, 3)+(0.3*joystickR);
-			 motorSet (1, motorL); // port, speed
-			 motorSet(2, motorR);
+			// motorR = pow(joystickR, 3)+(0.3*joystickR);
+			// motorL = pow(joystickR, 3)+(0.3*joystickR);
+			 speed = pow(joystickR, 3)+(0.3*joystickR);
+			 motorSet (1, speed); // port, speed
+			 motorSet(2, speed);
 
 
 
