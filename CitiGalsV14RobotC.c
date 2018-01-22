@@ -232,6 +232,7 @@ task usercontrol()
 		motor[leftBack] =  C1LY - C1RX;
 		motor[rightBack] =  C1LX - C1RX;
 		motor[rightTop] = -C1LY - C1RX;
+	  	pot = GetAnalogInput(1);
 /*
  		motor[leftTop] =   C1LX - C1RX;
 		motor[leftBack] =  -C1LY - C1RX;
@@ -253,6 +254,7 @@ task usercontrol()
   	}
 
   	//arm moves one direction when button 7D pressed
+	  while(1095<pot<4095){
 		if (vexRT[Btn6D] == 1)
 		{
 				motor[claw] = -HALFPWR; //motor forward for about half power
@@ -266,7 +268,7 @@ task usercontrol()
 			motor [claw] = 0;
   	}
 
-
+	  }
 
   	//new goal lift
   	if (vexRT [Btn5U] == 1)
